@@ -1,0 +1,22 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="simple" targetRuntime="MyBatis3Simple">
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/tran?serverTimezone=UTC"
+                userId="root"
+                password="root"/>
+<!--        targetPackage 生成目录   targetProject 存放在当前项目什么位置-->
+<!--        生成实体类-->
+        <javaModelGenerator targetPackage="com.example.pojo" targetProject="src/main/java"/>
+<!--        生成xml映射文件-->
+        <sqlMapGenerator targetPackage="com.example.mapper" targetProject="src/main/resources"/>
+<!--        生成mapper接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.mapper" targetProject="src/main/java"/>
+<!--        填写需要生成的表-->
+        <table tableName="emp" />
+        <table tableName="dept" />
+    </context>
+</generatorConfiguration>
